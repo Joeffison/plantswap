@@ -1,0 +1,7 @@
+version: "3.9"
+
+services:
+  plant_swap_service:
+    build: ./plant_swap_service
+    ports:
+      - "8000:8000"
