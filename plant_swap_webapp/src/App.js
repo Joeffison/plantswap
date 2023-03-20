@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import {PlantsApi} from "./api";
 
 function App() {
+  PlantsApi.getPlant({plant_id: 1})
   return (
     <div className="App">
       <header className="App-header">

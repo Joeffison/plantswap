@@ -1,6 +1,15 @@
 version: "3.9"
 
 services:
+  plant_swap_webapp:
+    build:
+      context: ./plant_swap_webapp
+      args:
+        REACT_APP_PLANT_SWAP_API: plant_swap_service
+    ports:
+      - "3000:80"
+    depends_on:
+      - plant_swap_service
   plant_swap_service:
     build: ./plant_swap_service
     ports:
