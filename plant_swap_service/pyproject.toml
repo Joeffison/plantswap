@@ -11,6 +11,13 @@ python = "^3.11"
 fastapi = "^0.94.1"
 uvicorn = "^0.21.1"
 
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+flake8 = "^6.0.0"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
