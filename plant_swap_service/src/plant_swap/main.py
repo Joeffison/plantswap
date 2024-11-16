@@ -10,6 +10,11 @@ async def root():
     return "OK"
 
 
+@app.get("/api/health")
+async def health_check():
+    return "OK"
+
+
 @app.get("/plants/{plant_uuid}")
 async def get_plant(plant_uuid: str):
     """Get a plant details by its uuid."""

@@ -53,9 +53,9 @@ WORKDIR /app
 
 # checkov:skip=CKV_DOCKER_4:COPY does not work for URLs
 # trivy:ignore:AVD-DS-0005
-ADD --chown=app https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem /app/.aws/rds/global-bundle.pem
+# ADD --chown=app https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem /app/.aws/rds/global-bundle.pem
 
-# HEALTHCHECK CMD ["curl", "http://localhost:8080/app/health"]
+HEALTHCHECK CMD ["curl", "http://localhost:8080/api/health"]
 # CMD ["gunicorn"]
 
 CMD ["uvicorn", "--app-dir=src", "plant_swap.main:app", "--host", "0.0.0.0", "--port", "8000"]
