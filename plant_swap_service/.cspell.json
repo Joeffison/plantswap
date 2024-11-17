@@ -1,5 +1,6 @@
 {
   "ignorePaths": [
-    "Dockerfile"
+    "Dockerfile",
+    ".mega-linter.yml"
   ]
 }

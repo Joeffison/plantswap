@@ -1,0 +1,12 @@
+PRE_COMMANDS:
+  - command: curl -sSL https://install.python-poetry.org | python3 -
+    continue_if_failed: false
+
+  - command: export PATH="/github/home/.local/bin:/root/.local/bin:$PATH" && poetry export -f requirements.txt --output /tmp/requirements.txt
+    continue_if_failed: false
+    cwd: workspace
+
+  - command: pip install --no-cache-dir -r /tmp/requirements.txt
+    continue_if_failed: false
+    cwd: workspace
+    venv: pylint
