@@ -1,0 +1,28 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Python backend with Poetry
+  - package-ecosystem: "pip"
+    directory: "/plant_swap_service"  # Root of the Python project
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: "deps(python)"
+      include: "scope"
+
+  # JavaScript/React frontend in the frontend/ directory
+  - package-ecosystem: "npm"
+    directory: "/plant_swap_webapp"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: "deps(frontend)"
+      include: "scope"
