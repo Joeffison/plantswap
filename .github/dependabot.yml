@@ -15,6 +15,7 @@ updates:
     commit-message:
       prefix: "deps(python)"
       include: "scope"
+    auto-merge: true  # Enable auto-merge
 
   # JavaScript/React frontend in the frontend/ directory
   - package-ecosystem: "npm"
@@ -26,3 +27,4 @@ updates:
     commit-message:
       prefix: "deps(frontend)"
       include: "scope"
+    auto-merge: true  # Enable auto-merge
